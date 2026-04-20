@@ -43,12 +43,15 @@ body {
 }
 
 .glow-effect-lg {
-  box-shadow: 0 0 40px rgba(100, 200, 255, 0.2), 0 0 80px rgba(100, 200, 255, 0.1);
+  box-shadow:
+    0 0 40px rgba(100, 200, 255, 0.2),
+    0 0 80px rgba(100, 200, 255, 0.1);
 }
 
 /* Floating animation */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -62,7 +65,8 @@ body {
 
 /* Pulse animation */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
   50% {

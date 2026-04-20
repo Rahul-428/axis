@@ -16,8 +16,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,        // 100ms delay between children
-      delayChildren: 0.2,          // Initial 200ms delay
+      staggerChildren: 0.1, // 100ms delay between children
+      delayChildren: 0.2, // Initial 200ms delay
     },
   },
 };
@@ -43,7 +43,7 @@ const itemVariants = {
       {/* Content */}
     </motion.div>
   ))}
-</motion.div>
+</motion.div>;
 ```
 
 **Effect**: Children elements fade in and slide up sequentially
@@ -57,7 +57,7 @@ Used in: Features icons, CTA cards, Testimonials
 ```tsx
 const floatingVariants = {
   animate: {
-    y: [0, -30, 0],  // Move up 30px then back
+    y: [0, -30, 0], // Move up 30px then back
     transition: {
       duration: 6,
       repeat: Infinity,
@@ -66,12 +66,9 @@ const floatingVariants = {
 };
 
 // Usage:
-<motion.div
-  variants={floatingVariants}
-  animate="animate"
->
+<motion.div variants={floatingVariants} animate="animate">
   Content floats up and down
-</motion.div>
+</motion.div>;
 ```
 
 **Effect**: Continuous gentle up-and-down floating motion
@@ -99,6 +96,7 @@ Used in: Hero, Features, CTA sections
 **Effect**: Background gradient blobs move in smooth patterns
 
 **Variants**:
+
 - Diagonal movement: `x: [0, 100, 0], y: [0, 50, 0]`
 - Linear movement: `x: [0, 100, 0], y: [0, 0, 0]`
 - Complex paths: `x: [0, 50, -50, 0], y: [0, -100, 100, 0]`
@@ -122,6 +120,7 @@ Used in: Buttons, Cards, CTA buttons
 ```
 
 **Effects**:
+
 - `whileHover`: Scale up 5% + cyan glow
 - `whileTap`: Scale down 5% for press effect
 
@@ -143,6 +142,7 @@ Used in: All major sections
 ```
 
 **Parameters**:
+
 - `once: true`: Animation plays only once
 - `margin: "-100px"`: Start animation 100px before element enters viewport
 
@@ -260,17 +260,19 @@ Used in: Pricing cards, Feature cards
 Used in: Pricing features list
 
 ```tsx
-{features.map((feature, idx) => (
-  <motion.div
-    key={idx}
-    initial={{ opacity: 0, x: -10 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ delay: idx * 0.05 }}
-    viewport={{ once: true }}
-  >
-    ✓ {feature}
-  </motion.div>
-))}
+{
+  features.map((feature, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, x: -10 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ delay: idx * 0.05 }}
+      viewport={{ once: true }}
+    >
+      ✓ {feature}
+    </motion.div>
+  ));
+}
 ```
 
 **Effect**: Features slide in from left with staggered timing
@@ -354,14 +356,14 @@ Used in: All section headings
 
 ## Animation Timing Reference
 
-| Animation Type | Duration | Effect |
-|---|---|---|
-| Entrance | 0.6-0.8s | Smooth, noticeable |
-| Hover | 0.3s | Quick feedback |
-| Background | 8-20s | Slow, subtle |
-| Float | 3-6s | Gentle movement |
-| Bounce | 2s | Attention grabbing |
-| Rotation | 20s | Very slow |
+| Animation Type | Duration | Effect             |
+| -------------- | -------- | ------------------ |
+| Entrance       | 0.6-0.8s | Smooth, noticeable |
+| Hover          | 0.3s     | Quick feedback     |
+| Background     | 8-20s    | Slow, subtle       |
+| Float          | 3-6s     | Gentle movement    |
+| Bounce         | 2s       | Attention grabbing |
+| Rotation       | 20s      | Very slow          |
 
 ---
 
@@ -379,6 +381,7 @@ Used in: All section headings
 ## Common Animation Combinations
 
 ### Card Hover Effect
+
 ```tsx
 whileHover={{
   y: -10,
@@ -388,11 +391,13 @@ whileHover={{
 ```
 
 ### Button Click Effect
+
 ```tsx
 whileTap={{ scale: 0.95 }}
 ```
 
 ### Scroll-In Effect
+
 ```tsx
 initial={{ opacity: 0, y: 50 }}
 whileInView={{ opacity: 1, y: 0 }}
@@ -401,6 +406,7 @@ viewport={{ once: true }}
 ```
 
 ### Floating Element
+
 ```tsx
 animate={{ y: [0, -20, 0] }}
 transition={{ duration: 4, repeat: Infinity }}
@@ -412,24 +418,46 @@ transition={{ duration: 4, repeat: Infinity }}
 
 ```css
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
-.float { animation: float 3s ease-in-out infinite; }
-.gradient-animate { animation: gradient-shift 8s ease infinite; }
-.pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+.gradient-animate {
+  animation: gradient-shift 8s ease infinite;
+}
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
 ```
 
 ---
@@ -437,24 +465,28 @@ transition={{ duration: 4, repeat: Infinity }}
 ## Customization Examples
 
 ### Slower Animation
+
 ```tsx
 transition={{ duration: 2 }}  // Instead of 0.6
 ```
 
 ### Faster Animation
+
 ```tsx
 transition={{ duration: 0.2 }}  // Instead of 0.6
 ```
 
 ### Different Scale
+
 ```tsx
 whileHover={{ scale: 1.1 }}  // Instead of 1.05
 ```
 
 ### Different Movement
+
 ```tsx
-y: [0, -50, 0]  // Bigger movement
-x: [0, 20, 0]   // Horizontal movement
+y: [0, -50, 0]; // Bigger movement
+x: [0, 20, 0]; // Horizontal movement
 ```
 
 ---

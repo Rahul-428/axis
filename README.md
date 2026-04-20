@@ -5,6 +5,7 @@ A modern, fully animated landing page for PropertyAI, an AI firm that provides i
 ## 🚀 Features
 
 ### Core Features
+
 - **AI-Powered Market Intelligence** - Real-time property analysis and market insights
 - **Smart Property Matching** - Find properties matching your criteria perfectly
 - **Advanced Analytics Dashboard** - Comprehensive market visualizations
@@ -13,6 +14,7 @@ A modern, fully animated landing page for PropertyAI, an AI firm that provides i
 - **Expert AI Guidance** - Personalized recommendations for your needs
 
 ### Design & Animation Features
+
 - **Dark Theme UI** - Modern dark aesthetic with cyan/blue gradient accents
 - **Advanced Framer Motion Animations**
   - Smooth staggered entrance animations
@@ -85,6 +87,7 @@ npm start
 ## ✨ Key Components
 
 ### Hero Section
+
 - Eye-catching gradient text
 - Animated background with moving blobs
 - Animated statistics cards
@@ -92,30 +95,35 @@ npm start
 - Scroll indicator animation
 
 ### Features Section
+
 - 6 feature cards with icons
 - Animated icons that float
 - Hover effects with scale and shadow
 - Staggered entrance animation
 
 ### Testimonials Section
+
 - Interactive testimonial carousel
 - Star ratings with staggered animation
 - Trust metrics displayed below
 - Auto-rotating carousel
 
 ### Pricing Section
+
 - 3-tier pricing plans
 - "Most Popular" badge with animation
 - Feature lists with checkmarks
 - Hover animations on pricing cards
 
 ### CTA Section
+
 - Large impactful heading with gradient
 - Floating cards with animations
 - Multiple floating background elements
 - Trust indicators
 
 ### Footer
+
 - Organized link sections
 - Hover animations on links
 - Animated divider
@@ -124,6 +132,7 @@ npm start
 ## 🎨 Design System
 
 ### Colors
+
 - **Background**: Black (#000000)
 - **Text**: Light gray/white
 - **Primary**: Cyan (#0ea5e9)
@@ -131,6 +140,7 @@ npm start
 - **Accent**: Purple (#8b5cf6)
 
 ### Animations
+
 - Entrance animations: 0.6-0.8s duration
 - Floating animations: 3-10s duration
 - Hover animations: 0.3s duration
@@ -139,6 +149,7 @@ npm start
 ## 📱 Responsive Design
 
 The landing page is fully responsive with breakpoints for:
+
 - Mobile (< 768px)
 - Tablet (768px - 1024px)
 - Desktop (> 1024px)
@@ -174,6 +185,7 @@ vercel
 ### Deploy on Other Platforms
 
 This Next.js project can be deployed on any Node.js-compatible platform:
+
 - Netlify
 - GitHub Pages
 - AWS

@@ -5,6 +5,7 @@
 ### 1. Change Company Name & Branding
 
 **File**: `src/app/layout.tsx`
+
 ```tsx
 export const metadata: Metadata = {
   title: "PropertyAI - Smart Real Estate Solutions", // Change this
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 ```
 
 **File**: `src/components/Footer.tsx`
+
 ```tsx
 <h3 className="text-lg font-bold text-white mb-4">PropertyAI</h3> {/* Change this */}
 ```
@@ -20,14 +22,16 @@ export const metadata: Metadata = {
 ### 2. Change Colors & Theme
 
 **File**: `src/app/globals.css`
+
 ```css
 :root {
-  --background: #0a0a0a;  /* Change background */
-  --foreground: #ededed;  /* Change text color */
+  --background: #0a0a0a; /* Change background */
+  --foreground: #ededed; /* Change text color */
 }
 ```
 
 **Tailwind Color Classes**: Update in component files
+
 - `bg-cyan-500` → Change to your primary color
 - `bg-blue-600` → Change to your secondary color
 - `bg-purple-500` → Change to your accent color
@@ -35,7 +39,9 @@ export const metadata: Metadata = {
 ### 3. Change Content
 
 #### Hero Section
+
 **File**: `src/components/Hero.tsx`
+
 ```tsx
 <span className="bg-gradient-to-r from-cyan-400...">
   Change this heading text here
@@ -47,7 +53,9 @@ export const metadata: Metadata = {
 ```
 
 #### Features
+
 **File**: `src/components/Features.tsx`
+
 ```tsx
 const features = [
   {
@@ -60,7 +68,9 @@ const features = [
 ```
 
 #### Testimonials
+
 **File**: `src/components/Testimonials.tsx`
+
 ```tsx
 const testimonials = [
   {
@@ -75,7 +85,9 @@ const testimonials = [
 ```
 
 #### Pricing Plans
+
 **File**: `src/components/Pricing.tsx`
+
 ```tsx
 const plans = [
   {
@@ -96,7 +108,9 @@ const plans = [
 ### 4. Add/Modify Animations
 
 #### Adjust Animation Duration
+
 **File**: Any component file
+
 ```tsx
 transition={{
   duration: 8,  // Increase or decrease for faster/slower animations
@@ -105,11 +119,12 @@ transition={{
 ```
 
 #### Add New Floating Animation
+
 ```tsx
 <motion.div
   animate={{
-    y: [0, -20, 0],  // Y-axis movement
-    x: [0, 10, 0],   // X-axis movement
+    y: [0, -20, 0], // Y-axis movement
+    x: [0, 10, 0], // X-axis movement
   }}
   transition={{
     duration: 5,
@@ -165,6 +180,7 @@ export default function Home() {
 ### 6. Change Fonts
 
 **File**: `src/app/layout.tsx`
+
 ```tsx
 import { Geist, Geist_Mono, YourFont } from "next/font/google";
 
@@ -174,11 +190,7 @@ const yourFont = YourFont({
 });
 
 export default function RootLayout() {
-  return (
-    <html className={`${yourFont.variable}`}>
-      {/* Use your font */}
-    </html>
-  );
+  return <html className={`${yourFont.variable}`}>{/* Use your font */}</html>;
 }
 ```
 
@@ -189,19 +201,15 @@ Place images in `public/` directory, then use:
 ```tsx
 import Image from "next/image";
 
-<Image
-  src="/your-image.png"
-  alt="Description"
-  width={100}
-  height={100}
-/>
+<Image src="/your-image.png" alt="Description" width={100} height={100} />;
 ```
 
 ### 8. Change Button Links
 
 **File**: `src/components/Hero.tsx`
+
 ```tsx
-<button onClick={() => window.location.href = "https://your-url.com"}>
+<button onClick={() => (window.location.href = "https://your-url.com")}>
   Click Me
 </button>
 ```
@@ -209,12 +217,14 @@ import Image from "next/image";
 ## 🌐 Environment Variables
 
 Create `.env.local`:
+
 ```
 NEXT_PUBLIC_API_URL=https://your-api.com
 NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
 Use in components:
+
 ```tsx
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 ```
@@ -226,15 +236,15 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 - Mobile is the default (no prefix)
 
 Example:
+
 ```tsx
-<div className="text-lg md:text-2xl lg:text-4xl">
-  Responsive text
-</div>
+<div className="text-lg md:text-2xl lg:text-4xl">Responsive text</div>
 ```
 
 ## ⚡ Performance Optimization
 
 1. **Image Optimization**
+
    ```tsx
    <Image
      src="/image.png"
@@ -246,12 +256,9 @@ Example:
    ```
 
 2. **Lazy Loading**
+
    ```tsx
-   <Image
-     src="/image.png"
-     alt="Description"
-     loading="lazy"
-   />
+   <Image src="/image.png" alt="Description" loading="lazy" />
    ```
 
 3. **Code Splitting**: Already handled by Next.js
@@ -259,6 +266,7 @@ Example:
 ## 🔍 SEO Optimization
 
 **File**: `src/app/layout.tsx`
+
 ```tsx
 export const metadata: Metadata = {
   title: "Your Title - Keyword Focus",
@@ -315,15 +323,18 @@ npm run format   # Format code (if configured)
 ## 🆘 Troubleshooting
 
 ### Animations not working?
+
 - Make sure component has `"use client"` at top
 - Check Framer Motion is installed: `npm install framer-motion`
 
 ### Styles not applying?
+
 - Rebuild Tailwind: `npm run build`
 - Clear browser cache
 - Check className syntax
 
 ### Build errors?
+
 - Check TypeScript errors: `npm run build`
 - Verify all imports are correct
 - Clear `.next` folder: `rm -rf .next`
