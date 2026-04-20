@@ -1,13 +1,12 @@
 {
-  "homepage": "https://your-username.github.io/axis",
+  "homepage": "https://rahul-428.github.io/axis",
   "name": "axis",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
+    "deploy": "npm run build && gh-pages -d out",
     "start": "next start",
     "lint": "eslint"
   },
